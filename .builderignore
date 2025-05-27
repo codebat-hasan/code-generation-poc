@@ -1,0 +1,14 @@
+# .builderignore example file
+
+# Exclude test files
+**/*.test.tsx
+**/*.spec.ts
+
+# Exclude specific directories
+node_modules/
+.next/
+dist/
+
+# Exclude specific files
+src/legacy-components/
+src/utils/deprecated-helpers.ts

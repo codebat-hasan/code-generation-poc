@@ -1,26 +1,12 @@
 import React from "react";
-import { PresentationHeader } from "../components/PresentationHeader";
-import { SearchSection } from "../components/SearchSection";
+import { Header } from "../components/Header";
 import { ContentCard } from "../components/ContentCard";
 
 const ViewPresentationPage: React.FC = () => {
   return (
     <div className="flex pb-5 flex-col overflow-hidden items-stretch bg-[#E5E5E5]">
-      <div className="flex w-full px-20 py-5 flex-col items-center justify-center md:px-5 bg-[#E5E5E5]">
-        <div className="w-full max-w-[1420px]">
-          <PresentationHeader
-            logoUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/24c3e8d00009552a562edb4901cc061a2ef0e781?placeholderIfAbsent=true"
-            brandLogoUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/9c9f245c51e9b81c3ebc1a2bcbb0425e0fc8b5e4?placeholderIfAbsent=true"
-            userIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/280a11e2-1dae-4c17-8065-0799765ea4d1?placeholderIfAbsent=true"
-          />
-          <SearchSection
-            searchIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/82e8d6780826c407570e64714f4fc7474682b054?placeholderIfAbsent=true"
-            filterIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/24b3333394c966e9786a3e48c18ec605cc32f8c0?placeholderIfAbsent=true"
-          />
-        </div>
-      </div>
-
-      <div className="self-center w-full max-w-[1420px]">
+      <Header userImageUrl="/user-avatar.png" />
+      <div className="self-center w-full max-w-[1420px] px-5">
         <div className="w-full">
           <div className="text-[#262626] w-full rounded-t-lg border-b border-[#E5E5E5] px-5 py-5 gap-3 font-roboto text-[30px] font-medium uppercase tracking-[0.25px] leading-none bg-white">
             A New Enterprise Digital Stack - A Convergence of Platforms

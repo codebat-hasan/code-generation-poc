@@ -1,27 +1,12 @@
 import React from "react";
-import { PresentationHeader } from "../components/PresentationHeader";
-import { SearchSection } from "../components/SearchSection";
-import { ContentCard } from "../components/ContentCard";
+import { Header } from "../components/Header";
 
 const InnovationSummitPage: React.FC = () => {
   return (
     <div className="flex pb-5 flex-col overflow-hidden items-stretch bg-[#E5E5E5]">
+      <Header userImageUrl="/user-avatar.png" />
       <div className="flex w-full px-20 py-5 flex-col items-center justify-center md:px-5 bg-[#E5E5E5]">
         <div className="w-full max-w-[1420px]">
-          <PresentationHeader
-            logoUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/24c3e8d00009552a562edb4901cc061a2ef0e781?placeholderIfAbsent=true"
-            brandLogoUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/9c9f245c51e9b81c3ebc1a2bcbb0425e0fc8b5e4?placeholderIfAbsent=true"
-            userIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/280a11e2-1dae-4c17-8065-0799765ea4d1?placeholderIfAbsent=true"
-          />
-          <SearchSection
-            searchIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/82e8d6780826c407570e64714f4fc7474682b054?placeholderIfAbsent=true"
-            filterIconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/24b3333394c966e9786a3e48c18ec605cc32f8c0?placeholderIfAbsent=true"
-          />
-        </div>
-      </div>
-
-      <div className="self-center w-full max-w-[1420px]">
-        <div className="w-full">
           <div className="text-[#262626] w-full rounded-t-lg border-b border-[#E5E5E5] px-5 py-5 gap-3 font-roboto text-[30px] font-medium uppercase tracking-[0.25px] leading-none bg-white">
             A New Enterprise Digital Stack - A Convergence of Platforms
           </div>
@@ -84,35 +69,62 @@ const InnovationSummitPage: React.FC = () => {
           </div>
           <div className="items-center rounded-b-lg flex w-full px-5 py-5 flex-col justify-start bg-[#F2F2F2]">
             <div className="flex w-full items-start gap-5 tracking-[0.15px] justify-start flex-wrap">
-              <ContentCard
-                title="Drones & UAVs - Application Areas"
-                description="This content discusses the various applications of drones and UAVs in different industries such as..."
-                metadata="Content Type: Summit Presentation | CoE: AI/ML | Technology: AI/Machine Learning | Industry: Technology"
-                thumbnailUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/2696b666999e9d5f61e2ff607f707731c02d4529?placeholderIfAbsent=true"
-                iconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/96f038dcd8a26acbf133beadc538274952570936?placeholderIfAbsent=true"
-                author="Admin"
-                date="May 22, 2024"
-              />
+              <div className="max-w-[400px] w-full flex-shrink-0">
+                <div className="w-full h-[225px] rounded-lg overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/2696b666999e9d5f61e2ff607f707731c02d4529?placeholderIfAbsent=true"
+                    alt="Drones & UAVs - Application Areas"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <div className="text-[#262626] text-lg font-medium leading-6">
+                    Drones & UAVs - Application Areas
+                  </div>
+                  <div className="text-[#595959] text-sm leading-snug mt-1">
+                    This content discusses the various applications of drones and
+                    UAVs in different industries such as...
+                  </div>
+                </div>
+              </div>
 
-              <ContentCard
-                title="AI And Machine Learning Overview"
-                description="AI and machine learning are transforming industries by using data to create models and make decisions..."
-                metadata="Content Type: Summit Presentation | CoE: AI/ML | Technology: AI/Machine Learning | Industry: Technology"
-                thumbnailUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/38ad55091180b2402c269597ea5942560c6c116b?placeholderIfAbsent=true"
-                iconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/d7dda78b9c14abf37f780f1d58fe49f5902b757e?placeholderIfAbsent=true"
-                author="Admin"
-                date="May 24, 2024"
-              />
+              <div className="max-w-[400px] w-full flex-shrink-0">
+                <div className="w-full h-[225px] rounded-lg overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/38ad55091180b2402c269597ea5942560c6c116b?placeholderIfAbsent=true"
+                    alt="AI And Machine Learning Overview"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <div className="text-[#262626] text-lg font-medium leading-6">
+                    AI And Machine Learning Overview
+                  </div>
+                  <div className="text-[#595959] text-sm leading-snug mt-1">
+                    AI and machine learning are transforming industries by using
+                    data to create models and make decisions...
+                  </div>
+                </div>
+              </div>
 
-              <ContentCard
-                title="Using AI To Personalize Your Apps"
-                description="Using AI to personalize apps for front desk sales agents and increase performance though training an..."
-                metadata="Content Type: Summit Presentation | CoE: AI/ML | Technology: AI/Machine Learning | Industry: Technology"
-                thumbnailUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/e2452079368d02e18d62d30abc65e7196efa4d29?placeholderIfAbsent=true"
-                iconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/d64fb0e93ff46c477ade4a7c81eba3ee15cbdcba?placeholderIfAbsent=true"
-                author="Admin"
-                date="February 27, 2024"
-              />
+              <div className="max-w-[400px] w-full flex-shrink-0">
+                <div className="w-full h-[225px] rounded-lg overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/e2452079368d02e18d62d30abc65e7196efa4d29?placeholderIfAbsent=true"
+                    alt="Using AI To Personalize Your Apps"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <div className="text-[#262626] text-lg font-medium leading-6">
+                    Using AI To Personalize Your Apps
+                  </div>
+                  <div className="text-[#595959] text-sm leading-snug mt-1">
+                    Using AI to personalize apps for front desk sales agents and
+                    increase performance though training an...
+                  </div>
+                </div>
+              </div>
             </div>
             <button className="text-[#262626] self-stretch rounded border border-[#262626] mt-5 px-[10px] py-1 text-[15px] font-medium tracking-[0.46px] leading-[26px]">
               More Summit Presentations
@@ -127,25 +139,43 @@ const InnovationSummitPage: React.FC = () => {
           </div>
           <div className="items-center rounded-b-lg flex w-full px-5 py-5 flex-col justify-start bg-[#F2F2F2]">
             <div className="flex w-full items-start gap-5 tracking-[0.15px] justify-start flex-wrap">
-              <ContentCard
-                title="E-Commerce Retail Analytics Platform"
-                description="A case study on the implementation of a data analytics and AI/ML solution for a retail company, focusing on..."
-                metadata="Content Type: Case Study | CoE: AI/ML | Technology: Data Lake & Big Data Analytics | Industry: Retail & Supply Chain"
-                thumbnailUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/810c631a8006e43b6a529568ce2db92fb8fc99e5?placeholderIfAbsent=true"
-                iconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/344f50acae5e75b2e8df2a7ddf5a1718380ea1b2?placeholderIfAbsent=true"
-                author="Sandeep N S"
-                date="February 15, 2022"
-              />
+              <div className="max-w-[400px] w-full flex-shrink-0">
+                <div className="w-full h-[225px] rounded-lg overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/810c631a8006e43b6a529568ce2db92fb8fc99e5?placeholderIfAbsent=true"
+                    alt="E-Commerce Retail Analytics Platform"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <div className="text-[#262626] text-lg font-medium leading-6">
+                    E-Commerce Retail Analytics Platform
+                  </div>
+                  <div className="text-[#595959] text-sm leading-snug mt-1">
+                    A case study on the implementation of a data analytics and
+                    AI/ML solution for a retail company, focusing on...
+                  </div>
+                </div>
+              </div>
 
-              <ContentCard
-                title="UPMC: Medical Image Diagnostics Assistance..."
-                description="UPMC Medical Image Diagnostics Assistance System (MIDAS) was engineered for a large multi million dolla..."
-                metadata="Content Type: Case Study | CoE: AI/ML | Technology: AI/Machine Learning | Industry: Technology"
-                thumbnailUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/5e93abb1b54ef426d3596cee1f4a6b65b3590619?placeholderIfAbsent=true"
-                iconUrl="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/e0a18f0d072d433de0be8e9054abe8adf60ef417?placeholderIfAbsent=true"
-                author="Sandeep N S"
-                date="February 15, 2022"
-              />
+              <div className="max-w-[400px] w-full flex-shrink-0">
+                <div className="w-full h-[225px] rounded-lg overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/37c87193e6d446d1a52b9092b7ea3b38/5e93abb1b54ef426d3596cee1f4a6b65b3590619?placeholderIfAbsent=true"
+                    alt="UPMC: Medical Image Diagnostics Assistance..."
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <div className="text-[#262626] text-lg font-medium leading-6">
+                    UPMC: Medical Image Diagnostics Assistance...
+                  </div>
+                  <div className="text-[#595959] text-sm leading-snug mt-1">
+                    UPMC Medical Image Diagnostics Assistance System (MIDAS) was
+                    engineered for a large multi million dolla...
+                  </div>
+                </div>
+              </div>
             </div>
             <button className="text-[#262626] self-stretch rounded border border-[#262626] mt-5 px-[10px] py-1 text-[15px] font-medium tracking-[0.46px] leading-[26px]">
               More Case Studies

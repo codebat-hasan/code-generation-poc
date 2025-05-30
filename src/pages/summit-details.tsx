@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Header } from "../components/Header";
-import { MenuIcon } from "../components/icons/MenuIcon";
 import { ExpandIcon } from "../components/icons/ExpandIcon";
 
 const SummitDetails: React.FC = () => {
@@ -9,52 +8,7 @@ const SummitDetails: React.FC = () => {
 
   return (
     <div className="w-full min-h-screen font-roboto bg-[#E5E5E5] px-0 md:px-5 lg:px-0">
-      <div className="w-full h-20 rounded-t-lg flex items-center justify-between p-4 md:p-5 max-w-[1420px] mx-auto mt-5 bg-white">
-        <MenuIcon className="w-12 h-12 flex-shrink-0" />
-        <div className="flex w-full max-w-[865px] justify-between items-center flex-col md:flex-row gap-5 md:gap-0">
-          <img
-            src="/accion-logo.svg"
-            alt="Accion Labs Logo"
-            className="w-[310px] h-12 flex-shrink-0"
-          />
-          <div className="flex items-start gap-10 md:gap-10">
-            <button className="text-white text-base font-medium leading-6 tracking-[0.15px] px-5 py-3 rounded-lg bg-[#262626]">
-              FEEDBACK
-            </button>
-            <div className="w-12 h-12 rounded-lg bg-[#E6E6E6]" />
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full max-w-[1420px] mx-auto h-[60px] flex items-center justify-between p-4 md:p-5 rounded-b-lg border-t border-[#E5E5E5] bg-[#F5F5F5]">
-        <div className="flex items-center gap-[5px] flex-1">
-          <span className="text-[#262626] text-base font-medium leading-6 tracking-[0.15px]">
-            Search
-          </span>
-          <span className="text-[#737373] text-base font-normal leading-6 tracking-[0.15px] pl-[2px]">
-            Enter a keyword. Example: Java
-          </span>
-        </div>
-        <div className="flex items-start gap-5">
-          <button className="p-2 hover:bg-gray-100 rounded-full">
-            <svg className="w-9 h-9" viewBox="0 0 36 36" fill="none">
-              <path
-                d="M25.95 16.5C25.95 21 22.14 24.15 18 24.15C13.86 24.15 10.05 21 10.05 16.5H7.5C7.5 21.615 11.58 25.845 16.5 26.58V31.5H19.5V26.58C24.42 25.845 28.5 21.615 28.5 16.5M16.2 7.35C16.2 6.36 17.01 5.55 18 5.55C18.99 5.55 19.8 6.36 19.8 7.35L19.785 16.65C19.785 17.64 18.99 18.45 18 18.45C17.01 18.45 16.2 17.64 16.2 16.65M18 21C19.1935 21 20.3381 20.5259 21.182 19.682C22.0259 18.8381 22.5 17.6935 22.5 16.5V7.5C22.5 6.30653 22.0259 5.16193 21.182 4.31802C20.3381 3.47411 19.1935 3 18 3C16.8065 3 15.6619 3.47411 14.818 4.31802C13.9741 5.16193 13.5 6.30653 13.5 7.5V16.5C13.5 17.6935 13.9741 18.8381 14.818 19.682C15.6619 20.5259 16.8065 21 18 21Z"
-                fill="#262626"
-              />
-            </svg>
-          </button>
-          <button className="p-2 hover:bg-gray-100 rounded-full">
-            <svg className="w-9 h-9" viewBox="0 0 36 36" fill="none">
-              <path
-                d="M23.2502 21.0002H22.0652L21.6452 20.5952C22.5826 19.5062 23.2677 18.2234 23.6515 16.8386C24.0353 15.4539 24.1083 14.0014 23.8652 12.5852C23.1602 8.41521 19.6802 5.08521 15.4802 4.57521C14.0036 4.3884 12.5039 4.54186 11.0957 5.02384C9.6876 5.50582 8.40837 6.30353 7.35595 7.35595C6.30353 8.40837 5.50582 9.6876 5.02384 11.0957C4.54186 12.5039 4.3884 14.0036 4.57521 15.4802C5.08521 19.6802 8.41521 23.1602 12.5852 23.8652C14.0014 24.1083 15.4539 24.0353 16.8386 23.6515C18.2234 23.2677 19.5062 22.5826 20.5952 21.6452L21.0002 22.0652V23.2502L27.3752 29.6252C27.9902 30.2402 28.9952 30.2402 29.6102 29.6252C30.2252 29.0102 30.2252 28.0052 29.6102 27.3902L23.2502 21.0002ZM14.2502 21.0002C10.5152 21.0002 7.50021 17.9852 7.50021 14.2502C7.50021 10.5152 10.5152 7.50021 14.2502 7.50021C17.9852 7.50021 21.0002 10.5152 21.0002 14.2502C21.0002 17.9852 17.9852 21.0002 14.2502 21.0002Z"
-                fill="#262626"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
+      <Header userImageUrl="/user-avatar.png" />
       <div className="max-w-[1420px] mx-auto flex flex-col gap-5 pb-5">
         <div className="flex flex-col">
           <h1 className="w-full text-[#262626] text-[30px] font-medium leading-[123.5%] tracking-[0.25px] uppercase p-5 rounded-t-lg border-b border-[#E5E5E5] bg-white md:text-2xl">

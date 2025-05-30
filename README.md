@@ -1,7 +1,8 @@
 
-# Figma to Code Conversion Using Builder.io CLI
+# Accelerated UI Development from Figma using Builder.io and GitHub Copilot
 
-This guide describes the process of converting Figma designs to code using the Builder.io CLI. It includes instructions on exporting designs, configuring code generation rules, and executing the CLI tool to create or update components and pages.
+This guide outlines a semi-automated workflow for rapidly generating and refining frontend code from Figma designs. It combines Builder.io CLI to bootstrap pages and components, with GitHub Copilot acting as a coding assistant to improve, modularize, and align the generated output with your project’s architecture and conventions.
+
 
 ---
 
@@ -21,7 +22,7 @@ This guide describes the process of converting Figma designs to code using the B
 
 1. Go to [https://builder.io](https://builder.io).  
 2. Sign up for an account.  
-3. Log in to access your workspace.  
+3. Log in to access your workspace.
 
 ---
 
@@ -99,47 +100,46 @@ src/utils/deprecated-helpers.ts
 
 1. Open a terminal in the root directory of your project.
 2. Paste the CLI command copied from the Figma plugin.
-3. The CLI will prompt you to select one of the following actions:
+3. The CLI will prompt you to choose:
 
    * Create a new page
    * Update an existing page
    * Create a new component
    * Update an existing component (e.g., `ContentCard`)
-4. After generation, you will be prompted to:
+4. After generation, the CLI will ask whether you want to:
 
    * **Accept** the generated code
-   * **Refine** the generated code
+   * **Refine** the code with changes
    * **Revert** the changes
-5. If you choose **Refine**, input the specific changes you want. The CLI will apply those changes and regenerate the code.
+5. If you choose **Refine**, you'll be prompted to describe what to improve. The CLI will regenerate the code accordingly.
 
 ---
 
 ## 6. Integrate with Coding Agent (GitHub Copilot)
 
-To assist with refining or extending the generated code, you can integrate GitHub Copilot in VSCode.
+Builder.io gives you a fast start, but GitHub Copilot can help bring the generated code up to production standards.
 
 ### Setup
 
 1. Install the [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) in Visual Studio Code.
-2. Create a file at `.github/copilot-guideline.md` in your project.
+2. Create a file named `.github/copilot-guideline.md` in your project.
 
-### Purpose
-
-The `copilot-guideline.md` file provides Copilot with context and best practices specific to your project. This helps Copilot align with your coding standards and design system when generating or fixing code.
+This file helps Copilot understand your architectural and stylistic expectations when generating or refactoring code.
 
 ### Example Use Cases
 
-* **Fixing Design Issues:** Ask Copilot to adjust layout, spacing, or style inconsistencies in Builder.io-generated code.
-* **Refactoring Components:** Prompt Copilot to break a large component into smaller modular components.
-* **Enforcing Guidelines:** Ensure Copilot-generated code uses Tailwind CSS, follows the BEM naming convention, and adheres to `.builderrules`.
+* **Fix Design Inconsistencies:** Adjust layout, spacing, or visual mismatches in generated UI.
+* **Refactor into Modular Components:** Break down large components into smaller, reusable parts.
+* **Apply Project Conventions:** Ensure Tailwind, BEM, JSDoc, accessibility, and folder structure standards are followed.
 
-> Tip: Include examples and do's/don'ts in the `copilot-guideline.md` to improve Copilot’s output quality.
+> 💡 **Tip:** Include sample components, code patterns, and naming conventions in the `copilot-guideline.md` file to guide Copilot's behavior.
 
 ---
 
 ## Caveats
 
-* CSS spacing, font size, and color values may not be correctly identified. Manual adjustment may be needed.
-* Existing component mapping may not work reliably. Full support for this feature is expected in the enterprise version.
-* Props may not be automatically inferred in generated components. Manual definition and refactoring might be required.
+* Builder.io-generated CSS (spacing, font sizes, colors) may need manual adjustment.
+* Mapping to existing components may not work perfectly; more reliable in the enterprise version.
+* Component props may not be correctly inferred — review and refactor where needed.
+* AI refinement works best when prompt context is detailed and grounded in project conventions.
 

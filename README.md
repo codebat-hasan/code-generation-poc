@@ -12,6 +12,7 @@ This guide describes the process of converting Figma designs to code using the B
 - [3. Create `.builderrules` File](#3-create-builderrules-file)  
 - [4. Create `.builderignore` File](#4-create-builderignore-file)  
 - [5. Run the CLI Command](#5-run-the-cli-command)  
+- [6. Integrate with Coding Agent (GitHub Copilot)](#6-integrate-with-coding-agent-github-copilot)  
 - [Caveats](#caveats)
 
 ---
@@ -110,6 +111,29 @@ src/utils/deprecated-helpers.ts
    * **Refine** the generated code
    * **Revert** the changes
 5. If you choose **Refine**, input the specific changes you want. The CLI will apply those changes and regenerate the code.
+
+---
+
+## 6. Integrate with Coding Agent (GitHub Copilot)
+
+To assist with refining or extending the generated code, you can integrate GitHub Copilot in VSCode.
+
+### Setup
+
+1. Install the [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) in Visual Studio Code.
+2. Create a file at `.github/copilot-guideline.md` in your project.
+
+### Purpose
+
+The `copilot-guideline.md` file provides Copilot with context and best practices specific to your project. This helps Copilot align with your coding standards and design system when generating or fixing code.
+
+### Example Use Cases
+
+* **Fixing Design Issues:** Ask Copilot to adjust layout, spacing, or style inconsistencies in Builder.io-generated code.
+* **Refactoring Components:** Prompt Copilot to break a large component into smaller modular components.
+* **Enforcing Guidelines:** Ensure Copilot-generated code uses Tailwind CSS, follows the BEM naming convention, and adheres to `.builderrules`.
+
+> Tip: Include examples and do's/don'ts in the `copilot-guideline.md` to improve Copilot’s output quality.
 
 ---
 

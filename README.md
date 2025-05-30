@@ -1,40 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# Figma to Code Conversion Using Builder.io CLI
 
-First, run the development server:
+This guide describes the process of converting Figma designs to code using the Builder.io CLI. It includes instructions on exporting designs, configuring code generation rules, and executing the CLI tool to create or update components and pages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Table of Contents
+
+- [1. Create a Builder.io Account](#1-create-a-builderio-account)  
+- [2. Export Design from Figma](#2-export-design-from-figma)  
+- [3. Create `.builderrules` File](#3-create-builderrules-file)  
+- [4. Create `.builderignore` File](#4-create-builderignore-file)  
+- [5. Run the CLI Command](#5-run-the-cli-command)  
+- [Caveats](#caveats)
+
+---
+
+## 1. Create a Builder.io Account
+
+1. Go to [https://builder.io](https://builder.io).  
+2. Sign up for an account.  
+3. Log in to access your workspace.  
+
+---
+
+## 2. Export Design from Figma
+
+1. Open your design file in Figma.  
+2. Run the **Builder.io plugin** from the Figma menu.  
+3. Select the frame or component you want to export.  
+4. The plugin will generate a CLI command based on your selection.  
+5. Copy the generated CLI command.
+
+---
+
+## 3. Create `.builderrules` File
+
+In the root directory of your project, create a file named `.builderrules`. This file defines how the code should be generated from Figma designs.
+
+### Example `.builderrules` content:
+
+```txt
+# Project-wide guidelines
+
+Follow BEM naming convention for CSS classes
+Use functional components with TypeScript interfaces for props
+Add JSDoc comments to all exported functions
+Using nextjs generate code according to that
+Properly identify image and icon — if it is an icon, create it as SVG; if it is an image, use Next.js <Image> tag
+
+# Component structure
+
+All components should have prop validation
+Place components in /components/{ComponentName}.tsx structure
+Do not hardcode height/width in components
+Use existing components instead of regenerating them when nested
+
+# Styling guidelines
+
+Use Tailwind CSS utility classes for styling
+Prefer grid layout over flexbox when appropriate
+Ensure all interactive elements have proper focus states
+
+# Page generation guideline
+
+Generate pages inside /pages directory (Next.js convention)
+Use existing components from /components folder when available
+Do not regenerate the common page header used across the project
+````
+
+---
+
+## 4. Create `.builderignore` File
+
+In the root directory, create a `.builderignore` file to exclude files or folders from code generation.
+
+### Example `.builderignore` content:
+
+```txt
+# Exclude test files
+**/*.test.tsx
+**/*.spec.ts
+
+# Exclude specific directories
+node_modules/
+.next/
+dist/
+
+# Exclude specific files
+src/legacy-components/
+src/utils/deprecated-helpers.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 5. Run the CLI Command
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Open a terminal in the root directory of your project.
+2. Paste the CLI command copied from the Figma plugin.
+3. The CLI will prompt you to select one of the following actions:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+   * Create a new page
+   * Update an existing page
+   * Create a new component
+   * Update an existing component (e.g., `ContentCard`)
+4. After generation, you will be prompted to:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   * **Accept** the generated code
+   * **Refine** the generated code
+   * **Revert** the changes
+5. If you choose **Refine**, input the specific changes you want. The CLI will apply those changes and regenerate the code.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Caveats
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+* CSS spacing, font size, and color values may not be correctly identified. Manual adjustment may be needed.
+* Existing component mapping may not work reliably. Full support for this feature is expected in the enterprise version.
+* Props may not be automatically inferred in generated components. Manual definition and refactoring might be required.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
